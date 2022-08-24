@@ -114,8 +114,8 @@ git config --global user.email "either-personal-or-company@email.com"
 3) Open the ~/.gitconfig with an editor of your choice and add the following block:
 ```
 [user]
-	email = jenslaursen13@gmail.com
-	name = TroldeJens
+	email = either-personal-or-company@email.com
+	name = your-github-username
 [core]
 	editor = nano
 [pull]
