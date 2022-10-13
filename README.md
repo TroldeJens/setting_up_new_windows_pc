@@ -13,7 +13,7 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 scoop bucket add extras 
 
 #Install everything
-scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin python winscp vscode
+scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin python winscp vscode paint.net
 ```
 
 ## Chocolatey
@@ -22,7 +22,7 @@ scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepas
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 #Install everything
-choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager python winscp vscode
+choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager python winscp vscode paint.net
 ```
 
 ## Windows Terminal and PowerToys
