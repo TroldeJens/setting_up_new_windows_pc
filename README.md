@@ -13,7 +13,7 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 scoop bucket add extras 
 
 #Install everything
-scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin python winscp vscode paint.net
+scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin python winscp vscode paint.net terraform
 ```
 
 ## Chocolatey
@@ -22,7 +22,7 @@ scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepas
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 #Install everything
-choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager python winscp vscode paint.net
+choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager python winscp vscode paint.net terraform
 ```
 
 ## Windows Terminal and PowerToys
@@ -57,6 +57,11 @@ choco install microsoft-windows-terminal powertoys
 5.  Locate `Don't search the web or display web results in Search over metered connections` and double-click it. Switch the preference to enabled.
 
 See also [How to disable web search in Windows 10's start menu - gHacks Tech News](https://www.ghacks.net/2015/06/23/how-to-disable-web-search-in-windows-10s-start-menu/)
+
+# Disable Snap-Windows-Overview window
+When you snap a window (WIN+Right or WIN+Left), you're shown a window with all available programs you can open. 
+To disable that nonsense, search for "Snap Settings" and deactivate "When I snap a window, show what I can snap next to it". Also, you may want to disable "When I resize a window, simultaneously resize any
+adjacent snapped window".
 
 # Setup WSL
 ```powershell
