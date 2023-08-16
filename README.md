@@ -13,7 +13,7 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 scoop bucket add extras 
 
 #Install everything
-scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin python winscp vscode paint.net terraform
+scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty aws aws-session-manager-plugin saml2aws python winscp vscode paint.net terraform
 ```
 
 ## Chocolatey
@@ -22,12 +22,13 @@ scoop install 7zip git obsidian greenshot spotify notepadplusplus postman keepas
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 #Install everything
-choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager python winscp vscode paint.net terraform
+choco install 7zip git obsidian greenshot spotify notepadplusplus postman keepass putty awscli awscli-session-manager saml2aws python winscp vscode paint.net terraform
 ```
 
-## Windows Terminal and PowerToys
+## Windows Terminal, PowerToys and Visual Studio Code
 - Windows Terminal - [An overview on Windows Terminal | Microsoft Docs](https://docs.microsoft.com/en-us/windows/terminal/)
 - Windows PowerToys - [Microsoft PowerToys | Microsoft Docs](https://docs.microsoft.com/en-us/windows/powertoys/)
+- Visual Studio Code - [Visual Studio Code](https://code.visualstudio.com/)
 
 Those can be installed using either WinGet, Scoop or Chocolatey. 
 >! Warning  
@@ -35,13 +36,14 @@ Those can be installed using either WinGet, Scoop or Chocolatey.
 
 ### WinGet
 ```powershell
+winget install --exact --id=Microsoft.VisualStudioCode
 winget install Microsoft.PowerToys --source winget
 winget install --exact --id=Microsoft.WindowsTerminal --source msstore --accept-source-agreements --accept-package-agreements 
 ```
 
 ### Scoop
 ```powershell
-scoop install windows-terminal powertoys
+scoop install windows-terminal powertoys vscode.install
 ```
 
 ### Chocolatey
@@ -143,3 +145,19 @@ git config --global user.email "either-personal-or-company@email.com"
 	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
 	logtree = log --graph --oneline --decorate --all
 ```
+
+# Disable or alter Windows 11 oddities
+## When right-clicking, "show more options" as default
+1) Open cmd and run the following command:
+	```bash
+	reg add HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32 /ve /d "" /f
+	```
+2) Restart the computer
+
+## Disable taskbar grouping of tasks
+1) Go to Settings->System->Multi-tasking
+2) On the "Snap windows" dropdown, untick "Show my snapped windows when I hover over taskbar apps"
+
+## Left-align tasks
+1) Go to Settings->Personalisation->Taskbar
+2) On the "Taskbar behaviours" dropdown, set the "Taskbar alignment" to left
