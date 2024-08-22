@@ -146,6 +146,25 @@ git config --global user.email "either-personal-or-company@email.com"
 	logtree = log --graph --oneline --decorate --all
 ```
 
+## Show current branch in colours in the terminal
+If bash doesn't already show your current branch (when in a repository folder), then do the following:
+1) Open .bashrc
+```bash
+nano ~/.bashrc
+```
+2) Go to the bottom and insert the following
+```bash
+# Show current git branch when inside a folder.
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+```
+3) Close the file
+4) Restart wsl.
+
+When entering a git folder, the current branch should now be displayed.
+
 # Disable or alter Windows 11 oddities
 ## When right-clicking, "show more options" as default
 1) Open cmd and run the following command:
